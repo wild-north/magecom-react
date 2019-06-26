@@ -1,0 +1,19 @@
+.form {
+    text-align: center;
+}
+
+.input {
+    height: 25px;
+    padding: 0 4px;
+    border: 1px solid #a3c644;
+    border-radius: 4px 0 0 15px;
+}
+
+.button {
+    width: 25px;
+    height: 27px;
+    background-color: #A3C644;
+    border-radius: 0 15px 4px 0;
+    margin-right: -2px;
+    border: 1px solid #a3c644;
+}

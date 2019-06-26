@@ -1,0 +1,10 @@
+@import '../../styles/common-variables.css';
+/* @todo: make this path absolute */
+
+.footer {
+    border: 1px solid black;
+    border-right: none;
+    border-left: none;
+    padding: 5px 15px;
+    background-color: var(--footer-color);
+}

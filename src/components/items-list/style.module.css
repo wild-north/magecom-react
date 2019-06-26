@@ -1,0 +1,17 @@
+.ol {
+    counter-reset: item;
+}
+
+.li {
+    counter-increment: item;
+    border-bottom: 1px solid black;
+}
+
+.ol .ol > .li {
+    display: block;
+}
+
+.ol .ol > .li:before {
+    content: counters(item, ".") ". ";
+    margin-left: -20px;
+}

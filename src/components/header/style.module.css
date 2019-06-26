@@ -1,0 +1,11 @@
+@import '../../styles/common-variables.css';
+/* @todo: make this path absolute */
+
+.header {
+    border: 1px solid black;
+    border-right: none;
+    border-left: none;
+    padding: 5px 15px;
+    min-height: 18px;
+    background-color: var(--header-color);
+}

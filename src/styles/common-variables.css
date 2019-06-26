@@ -1,0 +1,42 @@
+:root {
+    --box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    --border-line: 1px solid var(--grey-color);
+    --input-checkmark: "\2713";
+    --custom-input-checkmark: "\f00c";
+    --fa-angle-left: "\f104";
+    --fa-angle-right: "\f105";
+    --white-color: #FFFFFF;
+    --main-grey-color: #666666;
+    --light-blue-color: #55C2D8;
+    --light-grey-color: #CCCCCC;
+    --white-smoke-color: #FCFCFC;
+    --dark-blue-color: #1A9CB0;
+    --grey-color: #EEEEEE;
+    --light-green-color: #A3C644;
+    --silver-grey-color: #999999;
+    --dark-grey-color: #333333;
+    --medium-grey-color: #888888;
+    --charcoal-color: #464547;
+    --platinum-color: #e5e5e5;
+    --vivid-blue-color: #34c1d1;
+    --ghost-white-color: #f9f9f9;
+    --silver-color: #e7e7e7;
+    --light-silver-color: #CECECE;
+    --white-smoke-grey-color: #DDDDDD;
+    --cornflower-white: #ebeef0;
+    --yellow-color: #ffff00;
+    --summer-sky-blue: #39C2D7;
+    --error-color: #e4445f;
+    --purple: #8b5a9f;
+    --burdundy: #8e244d;
+
+
+    --login-button-bg-color: #A3C644;
+
+    --header-color: #A3C644;
+    --footer-color: #A3C644;
+    --inactive-nav-bg-color: #DDDDDD;
+    --inactive-nav-color: #33333;
+    --active-nav-bg-color: #A3C644;
+    --active-nav-color: #DDDDDD;
+}
