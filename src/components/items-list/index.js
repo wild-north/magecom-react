@@ -1,19 +1,32 @@
 import React, { Fragment } from 'react';
 import { isEmpty } from 'lodash';
-// import { ol, li } from './style.module.css';
+import PropTypes from 'proptypes';
+import { NavLink } from 'react-router-dom';
 
 const Item = ({ item, list }) => {
     return (
         <Fragment>
             <li>
-                { item.name }
+                <NavLink to={`/category/${item.id}`}>
+                    { item.name }
+                </NavLink>
+                {
+                    getItemsList(list, item)
+                }
             </li>
-            <ItemsList items={ list.filter(v => v.parent === item.id) }
-                       parentId={ item.id }
-            />
         </Fragment>
     );
 };
+
+function getItemsList(list, item) {
+    const filteredData = list.filter(v => v.parent === item.id);
+
+    if (!filteredData.length) {
+        return null;
+    }
+
+    return <ItemsList items={ filteredData } parentId={ item.id }/>;
+}
 
 export const ItemsList = ({ items, parentId }) => {
     if (isEmpty(items)) {
@@ -37,39 +50,7 @@ ItemsList.defaultProps = {
     parentId: null
 };
 
-
-
-// export const Categories = ({ tree, source }) => {
-//     return (
-//         <ol>
-//             {
-//                 tree.map(cat =>
-//                     <CategoryItem key={ cat.id } {...cat} source={ source }/>)
-//             }
-//         </ol>
-//     );
-// };
-//
-// function getCatById(source, id) {
-//     for (let i = 0; i < source.length; i++) {
-//         if (source[i].id === id) {
-//             return source[i];
-//         }
-//     }
-// }
-//
-// const CategoryItem = ({ id, name, sub, source, parentId }) => {
-//     const shouldRenderChildren = !!sub.length;
-//     const subTree = sub.map(id => getCatById(source, id));
-//
-//     return (
-//         <li>
-//             { name }
-//             {
-//                 shouldRenderChildren && (
-//                     <Categories tree={ subTree } source={ source }/>
-//                 )
-//             }
-//         </li>
-//     );
-// };
+ItemsList.propTypes = {
+    items: PropTypes.array.isRequired,
+    parentId: PropTypes.number
+};
