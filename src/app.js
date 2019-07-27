@@ -5,6 +5,9 @@ import {Sidebar} from './features/sidebar';
 
 import { MainContent } from './routes';
 
+import { headerConnector } from './connector';
+
+const HeaderConnected = headerConnector(Header);
 
 class App extends Component {
     constructor(props) {
@@ -77,15 +80,17 @@ class App extends Component {
     };
 
     render() {
-
         return (
             <div className="app">
                 <div className="wrapper">
-                    <Header toggleSidebar={ this.toggleSidebar }
-                            isOpened={ this.state.isSidebarVisible }
-                    />
+                    <HeaderConnected/>
+
+                    <button onClick={ this.props.getUserInfo }>
+                        Get data async
+                    </button>
+
                     {
-                        this.state.isSidebarVisible && (
+                        this.props.isSidebarVisible && (
                             <div className="sidebar">
                                 <Sidebar categories={ this.state.categories }
                                          addCategory={ this.addCategory }

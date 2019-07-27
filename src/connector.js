@@ -1,11 +1,14 @@
 import { connect } from 'react-redux';
-import App from './app';
+import { toggleSidebar, getUserInfo } from './actions';
 
-const mapStateToProps = (state) => {
-    return {
-        isVisible: state.common.isSidebarVisible,
-        name: 'Вася'
-    };
-};
+export const appConnector = connect(state => ({
+    isSidebarVisible: state.common.isSidebarVisible
+}), {
+    getUserInfo
+});
 
-export const appConnector = connect(mapStateToProps);
+export const headerConnector = connect(state => ({
+    isOpened: state.common.isSidebarVisible
+}), {
+    toggleSidebar: () => toggleSidebar()
+});

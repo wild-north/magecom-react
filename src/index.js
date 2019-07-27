@@ -8,17 +8,13 @@ import './styles/styles.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { initStore } from './store';
-
+import { setStoreInstance } from './helpers/store';
 
 const MyAwesomeAppComponent = appConnector(App);
 
-
-
 const store = initStore();
 
-setTimeout(() => {
-    store.dispatch({ type: 'SOME_ACTION', payload: 123123 });
-}, 2000);
+setStoreInstance(store);
 
 ReactDOM.render(
     <Provider store={ store }>

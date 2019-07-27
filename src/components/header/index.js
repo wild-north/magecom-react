@@ -13,13 +13,13 @@ const Button = ({ onClick, children }) => {
 
 const SidebarToggler = ({ toggleSidebar, isOpened }) => (
     <div>
-        <Button onClick={ () => toggleSidebar() }>
-            <i>{ isOpened ? 'X' : 'O' }</i>
+        <Button onClick={ toggleSidebar }>
+            <i>{ isOpened ? ']|[' : '|||' }</i>
         </Button>
     </div>
 );
 
-export const Header = ({ toggleSidebar, isOpened }) => {
+export const Header = ({ isOpened, toggleSidebar }) => {
     return (
         <div className={ header }>
             { 'Welcome, dude!' }
@@ -27,9 +27,6 @@ export const Header = ({ toggleSidebar, isOpened }) => {
             <SidebarToggler toggleSidebar={ toggleSidebar }
                             isOpened={ isOpened }
             />
-            <NavLink to="/" exact>Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/category/123">Category</NavLink>
         </div>
     );
 };
