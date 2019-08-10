@@ -1,0 +1,1 @@
+export const convertKelvinsToCelsius = tempK => parseInt(tempK - 273.15);

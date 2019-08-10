@@ -2,10 +2,15 @@ import React, {Component} from 'react';
 import {Footer} from './components/footer';
 import {Header} from './components/header';
 import {Sidebar} from './features/sidebar';
-
 import { MainContent } from './routes';
+import { WeatherWidget } from './components/weather-widget';
 
-import { headerConnector } from './connector';
+import {
+    headerConnector,
+    weatherWidgetConnector
+} from './connector';
+
+const Weather = weatherWidgetConnector(WeatherWidget);
 
 const HeaderConnected = headerConnector(Header);
 
@@ -84,6 +89,8 @@ class App extends Component {
             <div className="app">
                 <div className="wrapper">
                     <HeaderConnected/>
+
+                    <Weather/>
 
                     <button onClick={ this.props.getUserInfo }>
                         Get data async
