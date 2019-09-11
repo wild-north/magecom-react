@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 
 export const weather = createSelector(
-    state => state.weather,
+    state => state.get('weather'),
     weather => weather
 );
 
@@ -25,3 +25,18 @@ export const isFetching = createSelector(
     weather,
     weather => weather.isFetching
 );
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+export const common = createSelector(
+    state => state.get('common'),
+    common => common
+);
+
+export const isSidebarVisible = createSelector(
+    common => common.get('isSidebarVisible'),
+    isSidebarVisible => isSidebarVisible
+);
+
+//////////////////////////////////////////////////

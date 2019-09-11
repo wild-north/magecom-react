@@ -1,11 +1,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { reducer } from './reducers';
-// import { logger } from './middleware';
-import { async } from './middleware/async';
+import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const middlewareList = [
-    async
+    thunk,
+    sagaMiddleware
 ];
 
 
@@ -18,7 +21,3 @@ export function initStore(preloadedState) {
         )
     );
 }
-
-// export function initStore(preloadedState) {
-//     return createStore(reducer, preloadedState);
-// }

@@ -14,7 +14,6 @@ export const weather = (state = initialState, action) => {
 
     switch (type) {
         case cnt.WEATHER_REQUEST:
-
             return state
                 .set('hasError', false)
                 .set('errorMessage', null)
@@ -25,6 +24,7 @@ export const weather = (state = initialState, action) => {
                 .set('data', Immutable.fromJS(payload))
                 .set('hasData', true)
                 .set('isFetching', false);
+
         case cnt.WEATHER_FAILURE:
             return state
                 .set('isFetching', false)

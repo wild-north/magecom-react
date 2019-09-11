@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Футер отображается корректно 1`] = `
+<footer
+  className="footer footer"
+>
+  <span>
+     © крайний СЕВЕР 2019
+  </span>
+</footer>
+`;
